@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cocina Sin Glucosa — 200 Recetas para Diabéticos</title>
 <meta name="description" content="Descubre 200 recetas saludables, sin azúcar, gluten ni lácteos, creadas para controlar tu glucosa sin renunciar al sabor.">
-<link rel="preload" as="image" href="https://res.cloudinary.com/dah7yicta/image/upload/f_auto,q_auto/v1782253769/capaimagemhead_original_pmyefv.webp" fetchpriority="high">
+<link rel="preload" as="image" href="https://res.cloudinary.com/dah7yicta/image/upload/f_auto,q_auto,w_640/v1782253769/capaimagemhead_original_pmyefv.webp" fetchpriority="high">
 
 <!-- Meta Pixel Code -->
 <script>
@@ -75,7 +75,7 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
   @media (min-width: 768px) { h1 { font-size: 48px; } }
   .hero p.sub { font-size: 16px; color: var(--verde-claro); margin-bottom: 24px; }
   @media (min-width: 768px) { .hero p.sub { font-size: 18px; } }
-  .ebook-cover { width: 100%; max-width: 320px; margin: 0 auto 24px; height: auto; object-fit: contain; }
+  .ebook-cover { width: 100%; max-width: 320px; margin: 0 auto 24px; }
 
   /* CTA BUTTON */
   .cta-wrap { display: flex; flex-direction: column; align-items: center; gap: 12px; }
@@ -90,6 +90,12 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
   .payment-trust-img { height: 44px; width: 350px; margin: 0 auto; object-fit: contain; }
   .stock-text { font-size: 13px; font-weight: 700; color: var(--vermelho); letter-spacing: 0.5px; }
   .hero-note { font-size: 12px; color: var(--cinza-texto); margin-top: 12px; }
+
+  /* STICKY CTA (mobile) */
+  .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 999; background: rgba(255,255,255,0.97); box-shadow: 0 -2px 12px rgba(0,0,0,0.12); padding: 10px 16px; display: none; }
+  .sticky-cta a { display: block; width: 100%; text-align: center; background: var(--amarelo); color: var(--verde-escuro); font-weight: 800; padding: 14px; border-radius: 9999px; font-size: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+  .sticky-cta a:active { background: var(--amarelo-hover); }
+  @media (max-width: 767px) { .sticky-cta { display: block; } body { padding-bottom: 76px; } }
 
   /* PROBLEMA */
   .section-white { background: #fff; }
@@ -274,6 +280,11 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
 </head>
 <body>
 
+<!-- STICKY CTA (mobile) -->
+<div class="sticky-cta">
+  <a href="https://pay.hotmart.com/W106431546O?checkoutMode=10" target="_blank" rel="noopener noreferrer" onclick="trackIC()">QUIERO CONTROLAR MI GLUCOSA AHORA · US$7,99</a>
+</div>
+
 <!-- TARJA SUPERIOR -->
 <div class="tarja-container">
   <div class="tarja" id="tarja">
@@ -295,12 +306,12 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
       <span class="badge">Especial para diabéticos</span>
       <h1>¡Deja de vivir con miedo cada vez que comes!</h1>
       <p class="sub">Descubre <strong>200 recetas saludables</strong>, sin azúcar, gluten ni lácteos, creadas especialmente para diabéticos que quieren <strong>controlar su glucosa sin pasar hambre</strong> ni renunciar al sabor.</p>
-      <img class="ebook-cover" src="https://res.cloudinary.com/dah7yicta/image/upload/f_auto,q_auto/v1782253769/capaimagemhead_original_pmyefv.webp" alt="Ebook 200 Recetas Saludables para Diabéticos con bonos" width="800" height="800" fetchpriority="high">
       <div class="cta-wrap">
         <a href="https://pay.hotmart.com/W106431546O?checkoutMode=10" target="_blank" rel="noopener noreferrer" class="cta-btn" onclick="trackIC()">QUIERO CONTROLAR MI GLUCOSA AHORA</a>
         <img class="payment-trust-img" src="https://recetasglucosas.com/payment-trust.webp" alt="Métodos de pago seguros">
         <p class="stock-text">¡SOLO POR HOY! ÚLTIMAS 7 UNIDADES DISPONIBLES</p>
       </div>
+      <img class="ebook-cover" src="https://res.cloudinary.com/dah7yicta/image/upload/f_auto,q_auto,w_640/v1782253769/capaimagemhead_original_pmyefv.webp" alt="Ebook 200 Recetas Saludables para Diabéticos con bonos" width="800" height="800" fetchpriority="high" style="margin-top:24px;">
       <p class="hero-note">Acceso inmediato · Pago 100% seguro</p>
     </div>
   </section>
@@ -391,7 +402,7 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
           <h2>Llévate hoy el recetario completo + 5 bonos</h2>
         </div>
         <div class="ebook-relative">
-          <img class="ebook-cover" src="https://res.cloudinary.com/dah7yicta/image/upload/f_auto,q_auto/v1782253769/capaimagemhead_original_pmyefv.webp" alt="Ebook 200 Recetas Saludables para Diabéticos con bonos" width="800" height="800" fetchpriority="high">
+          <img src="https://res.cloudinary.com/dah7yicta/image/upload/f_auto,q_auto,w_640/v1782253769/capaimagemhead_original_pmyefv.webp" alt="Ebook con bonos" loading="lazy">
           <div class="best-seller-badge"><span>BEST<br>SELLER</span></div>
         </div>
         <div class="value-stack">
