@@ -75,7 +75,7 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
   @media (min-width: 768px) { h1 { font-size: 48px; } }
   .hero p.sub { font-size: 16px; color: var(--verde-claro); margin-bottom: 24px; }
   @media (min-width: 768px) { .hero p.sub { font-size: 18px; } }
-  .ebook-cover { width: 100%; max-width: 320px; margin: 0 auto 24px; height: auto; object-fit: contain; }
+  .ebook-cover { width: 100%; max-width: 320px; margin: 0 auto 24px; }
 
   /* CTA BUTTON */
   .cta-wrap { display: flex; flex-direction: column; align-items: center; gap: 12px; }
@@ -87,7 +87,7 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
   }
   .cta-btn:hover { background: var(--amarelo-hover); transform: scale(1.02); }
   @keyframes pulseGlow { 0%, 100% { box-shadow: 0 0 0 0 rgba(245,200,66,0.5); } 50% { box-shadow: 0 0 0 12px rgba(245,200,66,0); } }
-  .payment-trust-img { height: 44px; width: 350px; margin: 0 auto; object-fit: contain; }
+  .payment-trust-img { height: 32px; width: auto; margin: 0 auto; }
   .stock-text { font-size: 13px; font-weight: 700; color: var(--vermelho); letter-spacing: 0.5px; }
   .hero-note { font-size: 12px; color: var(--cinza-texto); margin-top: 12px; }
 
@@ -161,6 +161,21 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
   .best-seller-badge span { color: var(--verde-escuro); font-weight: 800; font-size: 12px; text-align: center; line-height: 1.2; }
   .oferta-list { list-style: none; margin-bottom: 24px; }
   .oferta-list li { padding: 4px 0; font-size: 16px; }
+  .value-stack { background: #fff; border: 2px solid var(--borda); border-radius: 16px; padding: 8px 16px; margin-bottom: 24px; }
+  .value-stack-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px dashed var(--borda); font-size: 15px; }
+  .value-stack-row:last-of-type { border-bottom: none; }
+  .value-stack-row .item { flex: 1; text-align: left; }
+  .value-stack-row .item strong { display: block; color: var(--verde-escuro); }
+  .value-stack-row .item span { font-size: 13px; color: var(--cinza-texto); }
+  .value-stack-row .val { font-weight: 700; color: var(--cinza-texto); text-decoration: line-through; white-space: nowrap; }
+  .value-stack-total { display: flex; justify-content: space-between; align-items: center; padding: 16px 0 8px; margin-top: 4px; border-top: 2px solid var(--verde-escuro); }
+  .value-stack-total .lbl { font-weight: 800; font-size: 17px; color: var(--verde-escuro); }
+  .value-stack-total .amount { font-weight: 800; font-size: 22px; color: var(--cinza-texto); text-decoration: line-through; }
+  .value-stack-today { text-align: center; background: var(--verde-escuro); color: #fff; border-radius: 12px; padding: 14px; margin-top: 12px; }
+  .value-stack-today .today-label { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--amarelo); font-weight: 700; }
+  .value-stack-today .today-price { font-size: 40px; font-weight: 800; line-height: 1.1; }
+  .value-stack-today .today-save { font-size: 14px; color: #cfe0d4; margin-top: 4px; }
+  .value-stack-today .today-save strong { color: var(--amarelo); }
   .oferta-destaque { text-align: center; background: var(--crema-clara); border-radius: 16px; padding: 20px; margin-bottom: 24px; }
   .stock-bar-label { font-size: 13px; font-weight: 700; color: var(--vermelho); margin-bottom: 8px; }
   .stock-bar { width: 100%; height: 12px; background: #f5dcd8; border-radius: 9999px; overflow: hidden; margin-bottom: 4px; }
@@ -361,8 +376,8 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
       <h2>Lo que dicen las mujeres que ya cambiaron su vida</h2>
       <p class="sub-center">Mensajes reales de nuestras lectoras</p>
       <div class="grid-2">
-        <img src="https://recetasglucosas.com/prova1.jpg" alt="Testimonio de María L. agradeciendo el recetario" loading="lazy">
-        <img src="https://recetasglucosas.com/prova2.jpg" alt="Testimonio de Mariela C. con diabetes tipo 2" loading="lazy">
+        <img src="https://recetasglucosas.com/prova1%281%29.jpg" alt="Testimonio de María L. agradeciendo el recetario" loading="lazy">
+        <img src="https://recetasglucosas.com/prova2%281%29.jpg" alt="Testimonio de Mariela C. con diabetes tipo 2" loading="lazy">
       </div>
     </div>
   </section>
@@ -379,14 +394,45 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
           <img src="https://recetasglucosas.com/capaimagemhead.webp" alt="Ebook con bonos" loading="lazy">
           <div class="best-seller-badge"><span>BEST<br>SELLER</span></div>
         </div>
-        <ul class="oferta-list">
-          <li>✅ Ebook 200 Recetas Saludables para Diabéticos</li>
-          <li>🎁 BONO 1: Plan de 7 Días para Controlar tu Glucosa</li>
-          <li>🎁 BONO 2: Calculadora Inteligente de Carbohidratos</li>
-          <li>🎁 BONO 3: Guía Visual para Leer Etiquetas como Experto</li>
-          <li>🎁 BONO 4: Guía Exprés de Sustituciones Inteligentes</li>
-          <li>🎁 BONO 5: Mini Recetario Premium de Antojos Sin Culpa</li>
-        </ul>
+        <div class="value-stack">
+          <div class="value-stack-row">
+            <div class="item"><strong>✅ Ebook 200 Recetas Saludables</strong><span>El recetario completo para diabéticos</span></div>
+            <div class="val">US$89,00</div>
+          </div>
+          <div class="value-stack-row">
+            <div class="item"><strong>🎁 Guía Visual para Leer Etiquetas</strong><span>Elige productos seguros como un experto</span></div>
+            <div class="val">US$12,00</div>
+          </div>
+          <div class="value-stack-row">
+            <div class="item"><strong>🎁 Guía Exprés de Sustituciones</strong><span>Convierte cualquier receta en segura</span></div>
+            <div class="val">US$11,00</div>
+          </div>
+          <div class="value-stack-row">
+            <div class="item"><strong>🎁 Calculadora de Carbohidratos</strong><span>Sabe qué y cuánto comer sin riesgo</span></div>
+            <div class="val">US$14,99</div>
+          </div>
+          <div class="value-stack-row">
+            <div class="item"><strong>🎁 Plan de 7 Días Completo</strong><span>Tu semana organizada + lista de compras</span></div>
+            <div class="val">US$10,99</div>
+          </div>
+          <div class="value-stack-row">
+            <div class="item"><strong>🎁 Recetario de Antojos Sin Culpa</strong><span>Dulces y snacks sin alterar tu glucosa</span></div>
+            <div class="val">US$10,99</div>
+          </div>
+          <div class="value-stack-row">
+            <div class="item"><strong>🎁 Mini Recetario: Panes y Pizzas</strong><span>Tus favoritos, ahora seguros</span></div>
+            <div class="val">US$11,99</div>
+          </div>
+          <div class="value-stack-total">
+            <div class="lbl">Valor total de todo:</div>
+            <div class="amount">US$160,96</div>
+          </div>
+          <div class="value-stack-today">
+            <div class="today-label">Hoy lo llevas todo por solo</div>
+            <div class="today-price">US$7,99</div>
+            <div class="today-save">Ahorras <strong>US$152,97</strong> — más del 95% de descuento</div>
+          </div>
+        </div>
         <div class="oferta-destaque">
           <p class="stock-bar-label">⚠️ Últimas 7 unidades disponibles</p>
           <div class="stock-bar"><div class="stock-bar-fill"></div></div>
@@ -397,7 +443,7 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
             <div class="countdown-unit"><div class="val" id="cd-m">15</div><div class="lbl">Min</div></div>
             <div class="countdown-unit"><div class="val" id="cd-s">00</div><div class="lbl">Seg</div></div>
           </div>
-          <p class="preco-real">Valor real: US$89</p>
+          <p class="preco-real">Valor real: US$160,96</p>
           <p class="preco-hoy-label">Hoy por solo</p>
           <p class="preco-final">US$7,99</p>
           <p class="preco-sub">Pago único · Acceso de por vida</p>
@@ -569,6 +615,7 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
 
       <div class="final-cta-block">
         <p class="label">Descuento especial solo por hoy:</p>
+        <p style="font-size:18px;color:var(--cinza-texto);text-decoration:line-through;margin-bottom:4px;">Valor total: US$160,96</p>
         <p class="price">$7,99 USD</p>
         <p class="pay-once">UN SOLO Y ÚNICO PAGO</p>
         <div class="chevrons">⌄⌄</div>
