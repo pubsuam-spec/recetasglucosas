@@ -299,7 +299,7 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
 
 <!-- STICKY CTA (mobile) -->
 <div class="sticky-cta">
-  <a href="https://pay.hotmart.com/W106431546O?checkoutMode=10" target="_blank" rel="noopener noreferrer" onclick="trackIC()">QUIERO CONTROLAR MI GLUCOSA AHORA · US$7,99</a>
+  <a href="https://pay.hotmart.com/W106431546O?checkoutMode=10" target="_blank" rel="noopener noreferrer" onclick="return trackIC(event)">QUIERO CONTROLAR MI GLUCOSA AHORA · US$7,99</a>
 </div>
 
 <!-- TARJA SUPERIOR -->
@@ -326,7 +326,7 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
       <p class="sub" style="margin-top:-12px;">Prepara platillos irresistibles, fáciles y económicos en <strong>menos de 15 minutos</strong>, sin miedo a que tu glucosa se dispare ni sentir que estás a dieta.</p>
       <img class="ebook-cover" src="https://res.cloudinary.com/dah7yicta/image/upload/f_auto,q_auto,w_560/v1782253769/capaimagemhead_original_pmyefv.webp" alt="Ebook 200 Recetas Saludables para Diabéticos con bonos" width="1122" height="1402" fetchpriority="high">
       <div class="cta-wrap">
-        <a href="https://pay.hotmart.com/W106431546O?checkoutMode=10" target="_blank" rel="noopener noreferrer" class="cta-btn" onclick="trackIC()">QUIERO CONTROLAR MI GLUCOSA AHORA</a>
+        <a href="https://pay.hotmart.com/W106431546O?checkoutMode=10" target="_blank" rel="noopener noreferrer" class="cta-btn" onclick="return trackIC(event)">QUIERO CONTROLAR MI GLUCOSA AHORA</a>
         <img class="payment-trust-img" src="https://recetasglucosas.com/payment-trust.webp" alt="Métodos de pago seguros">
         <p class="stock-text">¡SOLO POR HOY! ÚLTIMAS 7 UNIDADES DISPONIBLES</p>
       </div>
@@ -347,7 +347,7 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
         <div class="card"><img class="icon" src="https://recetasglucosas.com/icon66.webp" alt="Comida en familia" loading="lazy" width="80" height="80"><h3>Comida en familia</h3><p>Un solo menú para todos en casa. Recetas tan ricas que <strong>nadie notará que son saludables</strong>, y tú dejas de cocinar aparte.</p></div>
       </div>
       <div style="text-align:center; margin-top:32px;">
-        <a href="https://pay.hotmart.com/W106431546O?checkoutMode=10" target="_blank" rel="noopener noreferrer" class="cta-btn" onclick="trackIC()">QUIERO MI RECETARIO AHORA</a>
+        <a href="https://pay.hotmart.com/W106431546O?checkoutMode=10" target="_blank" rel="noopener noreferrer" class="cta-btn" onclick="return trackIC(event)">QUIERO MI RECETARIO AHORA</a>
         <p style="font-size:13px; color:var(--cinza-texto); margin-top:12px;">Acceso inmediato · Solo US$7,99</p>
       </div>
     </div>
@@ -492,7 +492,7 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
           <p class="preco-final">US$7,99</p>
           <p class="preco-sub">Pago único · Acceso de por vida</p>
         </div>
-        <a href="https://pay.hotmart.com/W106431546O?checkoutMode=10" target="_blank" rel="noopener noreferrer" class="cta-full" onclick="trackIC()">SÍ, QUIERO MI RECETARIO POR US$7,99</a>
+        <a href="https://pay.hotmart.com/W106431546O?checkoutMode=10" target="_blank" rel="noopener noreferrer" class="cta-full" onclick="return trackIC(event)">SÍ, QUIERO MI RECETARIO POR US$7,99</a>
         <p class="oferta-footer-note">🔒 Compra 100% segura · 💳 Tarjeta o PayPal</p>
       </div>
     </div>
@@ -680,7 +680,7 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
         <p class="pay-once">UN SOLO Y ÚNICO PAGO</p>
         <div class="chevrons">⌄⌄</div>
         <p class="clic-text">Clic en el botón para pagar en tu moneda local</p>
-        <a href="https://pay.hotmart.com/W106431546O?checkoutMode=10" target="_blank" rel="noopener noreferrer" class="cta-final-btn" onclick="trackIC()">→ ¡SÍ, QUIERO LA OFERTA!</a>
+        <a href="https://pay.hotmart.com/W106431546O?checkoutMode=10" target="_blank" rel="noopener noreferrer" class="cta-final-btn" onclick="return trackIC(event)">→ ¡SÍ, QUIERO LA OFERTA!</a>
         <div class="payment-badges">
           <span>PayPal</span><span>VISA</span><span>Mastercard</span><span>Discover</span><span>AmEx</span>
         </div>
@@ -700,9 +700,29 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
 </footer>
 
 <script>
-  // Meta Pixel InitiateCheckout tracking
-  function trackIC() {
-    if (window.fbq) fbq('track', 'InitiateCheckout');
+  // Meta Pixel InitiateCheckout tracking — garante envio antes de navegar
+  function trackIC(event, url) {
+    // Se o pixel não está disponível, deixa o link funcionar normal
+    if (!window.fbq) return true;
+
+    // Previne a navegação imediata
+    if (event) event.preventDefault();
+
+    var checkoutUrl = url || 'https://pay.hotmart.com/W106431546O?checkoutMode=10';
+    var navigated = false;
+    function go() {
+      if (navigated) return;
+      navigated = true;
+      window.open(checkoutUrl, '_blank');
+    }
+
+    // Dispara o evento; quando confirmar o envio, navega
+    fbq('track', 'InitiateCheckout', {}, { eventCallback: go });
+
+    // Fallback: se o callback não vier em 800ms, navega mesmo assim
+    setTimeout(go, 800);
+
+    return false;
   }
 
   // Countdown timer (15 min loop, igual ao original)
