@@ -127,6 +127,7 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
   .cat-card .img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
   .cat-card:hover .img-wrap img { transform: scale(1.05); }
   .cat-card .label { background: var(--verde-escuro); color: #fff; text-align: center; padding: 8px; font-weight: 700; }
+  .cat-card .cat-desc { background: var(--verde-escuro); color: #cfe0d4; text-align: center; padding: 0 12px 12px; font-size: 13px; line-height: 1.4; }
 
   /* GALERIA CARROSSEL */
   .carousel-wrap { position: relative; padding: 0 40px; }
@@ -262,6 +263,19 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
   .compra-segura .txt .l2 { font-size: 24px; font-weight: 800; color: #3aa64a; margin-top: -2px; }
   .final-cta-block { text-align: center; }
   .final-cta-block .label { font-size: 18px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--marrom); margin-bottom: 8px; }
+  .checklist-box { background: #fff; border: 2px solid var(--amarelo); border-radius: 16px; padding: 24px; max-width: 600px; margin: 0 auto; }
+  .checklist-box h3 { text-align: center; color: var(--verde-escuro); font-size: 20px; margin-bottom: 16px; }
+  .checklist-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px dashed var(--borda); font-size: 15px; }
+  .checklist-row:last-of-type { border-bottom: none; }
+  .checklist-row .ck-item { flex: 1; text-align: left; color: var(--verde-escuro); }
+  .checklist-row .ck-item::before { content: '✅ '; }
+  .checklist-row .ck-val { color: var(--cinza-texto); text-decoration: line-through; white-space: nowrap; font-weight: 700; }
+  .checklist-total { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; margin-top: 8px; border-top: 2px solid var(--verde-escuro); }
+  .checklist-total .ck-lbl { font-weight: 800; color: var(--verde-escuro); font-size: 17px; }
+  .checklist-total .ck-amount { font-weight: 800; color: var(--cinza-texto); text-decoration: line-through; font-size: 20px; }
+  .qualidades-box { max-width: 600px; margin: 0 auto; }
+  .qualidades-box li { display: flex; gap: 12px; font-size: 16px; margin-bottom: 14px; color: var(--verde-escuro); list-style: none; }
+  .qualidades-box .check { color: var(--verde-sucesso); font-weight: 800; flex-shrink: 0; }
   .final-cta-block .price { font-size: 56px; font-weight: 800; color: #3aa64a; margin-bottom: 12px; }
   .final-cta-block .pay-once { display: inline-block; background: var(--amarelo); color: var(--marrom); font-weight: 700; font-size: 13px; padding: 4px 12px; border-radius: 4px; margin-bottom: 12px; }
   .chevrons { margin: 8px 0; color: var(--marrom); font-size: 24px; }
@@ -331,6 +345,10 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
         <div class="card"><img class="icon" src="https://recetasglucosas.com/icon55.webp" alt="Mejora tu sueño" loading="lazy" width="80" height="80"><h3>Mejora tu sueño</h3><p>Cenas ligeras y deliciosas que ayudan a tu cuerpo a <strong>descansar mejor</strong>, sin esos picos de glucosa que te quitan el sueño por la noche.</p></div>
         <div class="card"><img class="icon" src="https://recetasglucosas.com/icon66.webp" alt="Comida en familia" loading="lazy" width="80" height="80"><h3>Comida en familia</h3><p>Un solo menú para todos en casa. Recetas tan ricas que <strong>nadie notará que son saludables</strong>, y tú dejas de cocinar aparte.</p></div>
       </div>
+      <div style="text-align:center; margin-top:32px;">
+        <a href="https://pay.hotmart.com/W106431546O?checkoutMode=10" target="_blank" rel="noopener noreferrer" class="cta-btn" onclick="trackIC()">QUIERO MI RECETARIO AHORA</a>
+        <p style="font-size:13px; color:var(--cinza-texto); margin-top:12px;">Acceso inmediato · Solo US$7,99</p>
+      </div>
     </div>
   </section>
 
@@ -340,12 +358,12 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
       <h2>Mira todo lo que tendrás en tus manos</h2>
       <p class="sub-center">200 recetas organizadas en 6 categorías deliciosas</p>
       <div class="grid-cat">
-        <div class="cat-card"><div class="img-wrap"><img src="https://recetasglucosas.com/mockupcafe.webp" alt="Desayunos" loading="lazy"></div><div class="label">Desayunos</div></div>
-        <div class="cat-card"><div class="img-wrap"><img src="https://recetasglucosas.com/mockupalmoco.webp" alt="Almuerzos" loading="lazy"></div><div class="label">Almuerzos</div></div>
-        <div class="cat-card"><div class="img-wrap"><img src="https://recetasglucosas.com/merendas.webp" alt="Meriendas y Cenas" loading="lazy"></div><div class="label">Meriendas y Cenas</div></div>
-        <div class="cat-card"><div class="img-wrap"><img src="https://recetasglucosas.com/mockuppao.webp" alt="Panes" loading="lazy"></div><div class="label">Panes</div></div>
-        <div class="cat-card"><div class="img-wrap"><img src="https://recetasglucosas.com/mockuppastelaria.webp" alt="Pastelería" loading="lazy"></div><div class="label">Pastelería</div></div>
-        <div class="cat-card"><div class="img-wrap"><img src="https://recetasglucosas.com/mockupsopas.webp" alt="Sopas y Cremas" loading="lazy"></div><div class="label">Sopas y Cremas</div></div>
+        <div class="cat-card"><div class="img-wrap"><img src="https://recetasglucosas.com/mockupcafe.webp" alt="Desayunos" loading="lazy"></div><div class="label">Desayunos</div><div class="cat-desc">Empieza el día con energía y la glucosa estable, sin azúcar ni culpa.</div></div>
+        <div class="cat-card"><div class="img-wrap"><img src="https://recetasglucosas.com/mockupalmoco.webp" alt="Almuerzos" loading="lazy"></div><div class="label">Almuerzos</div><div class="cat-desc">Platos completos, saciantes y fáciles, listos en menos de 15 minutos.</div></div>
+        <div class="cat-card"><div class="img-wrap"><img src="https://recetasglucosas.com/merendas.webp" alt="Meriendas y Cenas" loading="lazy"></div><div class="label">Meriendas y Cenas</div><div class="cat-desc">Cenas ligeras que ayudan a dormir mejor, sin picos de azúcar.</div></div>
+        <div class="cat-card"><div class="img-wrap"><img src="https://recetasglucosas.com/mockuppao.webp" alt="Panes" loading="lazy"></div><div class="label">Panes</div><div class="cat-desc">Panes suaves y caseros, sin harinas que disparen tu glucosa.</div></div>
+        <div class="cat-card"><div class="img-wrap"><img src="https://recetasglucosas.com/mockuppastelaria.webp" alt="Pastelería" loading="lazy"></div><div class="label">Pastelería</div><div class="cat-desc">Postres y dulces que puedes disfrutar sin remordimiento ni miedo.</div></div>
+        <div class="cat-card"><div class="img-wrap"><img src="https://recetasglucosas.com/mockupsopas.webp" alt="Sopas y Cremas" loading="lazy"></div><div class="label">Sopas y Cremas</div><div class="cat-desc">Reconfortantes y nutritivas, perfectas para cualquier momento del día.</div></div>
       </div>
     </div>
   </section>
@@ -369,6 +387,20 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
   </section>
 
   <!-- PROBLEMA (narrativo, depois da galeria) -->
+  <section class="section section-cream">
+    <div class="container">
+      <h2>Las comidas más deliciosas y seguras para ti</h2>
+      <ul class="qualidades-box" style="margin-bottom:8px;">
+        <li><span class="check">✓</span><span>Recetas con <strong>bajo impacto glucémico</strong>, pensadas para mantener tu azúcar estable.</span></li>
+        <li><span class="check">✓</span><span><strong>Sin azúcar, sin gluten y sin lácteos</strong>, aptas también para celíacos e intolerantes.</span></li>
+        <li><span class="check">✓</span><span>Ingredientes <strong>accesibles y económicos</strong>, fáciles de encontrar en cualquier supermercado.</span></li>
+        <li><span class="check">✓</span><span>Listas en <strong>menos de 15 minutos</strong>, perfectas para el día a día.</span></li>
+        <li><span class="check">✓</span><span>Tan ricas que <strong>toda la familia las disfruta</strong>, sin cocinar aparte.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROBLEMA NARRATIVO -->
   <section class="section section-white">
     <div class="container">
       <h2>Sé exactamente cómo te sientes</h2>
@@ -621,6 +653,22 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
       <div class="compra-segura">
         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#6b7a72" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         <div class="txt"><div class="l1">COMPRA 100%</div><div class="l2">SEGURA</div></div>
+      </div>
+
+      <div class="checklist-box" style="margin-bottom:32px;">
+        <h3>Esto es todo lo que recibes hoy:</h3>
+        <div class="checklist-row"><span class="ck-item">Ebook 200 Recetas Saludables</span><span class="ck-val">US$89,00</span></div>
+        <div class="checklist-row"><span class="ck-item">Guía Visual para Leer Etiquetas</span><span class="ck-val">US$12,00</span></div>
+        <div class="checklist-row"><span class="ck-item">Guía Exprés de Sustituciones</span><span class="ck-val">US$11,00</span></div>
+        <div class="checklist-row"><span class="ck-item">Calculadora de Carbohidratos</span><span class="ck-val">US$14,99</span></div>
+        <div class="checklist-row"><span class="ck-item">Plan de 7 Días Completo</span><span class="ck-val">US$10,99</span></div>
+        <div class="checklist-row"><span class="ck-item">Recetario de Antojos Sin Culpa</span><span class="ck-val">US$10,99</span></div>
+        <div class="checklist-row"><span class="ck-item">Mini Recetario: Panes y Pizzas</span><span class="ck-val">US$11,99</span></div>
+        <div class="checklist-total"><span class="ck-lbl">Valor total:</span><span class="ck-amount">US$160,96</span></div>
+        <div style="text-align:center; background:var(--verde-escuro); color:#fff; border-radius:12px; padding:14px; margin-top:16px;">
+          <div style="font-size:13px; text-transform:uppercase; letter-spacing:1px; color:var(--amarelo); font-weight:700;">Hoy lo llevas todo por solo</div>
+          <div style="font-size:40px; font-weight:800; line-height:1.1;">US$7,99</div>
+        </div>
       </div>
 
       <div class="final-cta-block">
