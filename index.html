@@ -309,10 +309,12 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
 <div class="tarja-container">
   <div class="tarja" id="tarja">
     <span>🔥 OFERTA POR TIEMPO LIMITADO — 91% OFF</span>
+    <span>⏰ Precio promocional termina hoy <span class="fecha-hoy"></span></span>
     <span>🍽️ MÁS DE 12.000 MUJERES YA TRANSFORMARON SU GLUCOSA</span>
     <span>✅ SIN AZÚCAR · SIN GLUTEN · SIN LÁCTEOS</span>
     <span>💳 PAGO ÚNICO · ACCESO INMEDIATO</span>
     <span>🔥 OFERTA POR TIEMPO LIMITADO — 91% OFF</span>
+    <span>⏰ Precio promocional termina hoy <span class="fecha-hoy"></span></span>
     <span>🍽️ MÁS DE 12.000 MUJERES YA TRANSFORMARON SU GLUCOSA</span>
     <span>✅ SIN AZÚCAR · SIN GLUTEN · SIN LÁCTEOS</span>
     <span>💳 PAGO ÚNICO · ACCESO INMEDIATO</span>
@@ -708,6 +710,14 @@ src="https://www.facebook.com/tr?id=1812290993076896&ev=PageView&noscript=1"
 </footer>
 
 <script>
+  // Data atual em espanhol na tarja (pega do dispositivo da pessoa)
+  (function() {
+    var meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+    var hoy = new Date();
+    var texto = hoy.getDate() + ' de ' + meses[hoy.getMonth()];
+    document.querySelectorAll('.fecha-hoy').forEach(function(el) { el.textContent = texto; });
+  })();
+
   // Meta Pixel InitiateCheckout — dispara o evento sem bloquear a navegação natural do link
   function trackIC() {
     if (window.fbq) {
